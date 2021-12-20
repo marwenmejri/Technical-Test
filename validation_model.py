@@ -5,7 +5,7 @@ from typing import Optional
 from datetime import datetime
 from pydantic import BaseModel, ValidationError, validator, Field, EmailStr
 from dotenv import load_dotenv
-from read_wright_gs import get_spreadsheet_data, update_spreadsheet_data
+from read_wright_gs import get_spreadsheet_data
 
 load_dotenv()
 sheet_id = os.getenv('SHEET_ID')
@@ -15,7 +15,7 @@ SERVICE_ACCOUNT_FILE = "keys.json"
 
 
 class UserModel(BaseModel):
-    id: int = Field(required=True)
+    id: int = Field(required=True, unique=True)
     email: EmailStr = Field(required=True)
     project: str = Field(required=True)
     status: str = Field(required=True)
@@ -37,7 +37,7 @@ class UserModel(BaseModel):
 
     @validator('test_score')
     def validate_testscore(cls, v, values, **kwargs):
-        if 'status' in values and values["status"] not in ['Submitted Test', 'Reminder Sent', 'Interview Mail Sent', 'Refusal Mail Sent']:
+        if 'status' in values and values["status"] not in ['Submitted Test', 'Interview Mail Sent', 'Refusal Mail Sent']:
             if v != None:
                 # print(v, type(v))
                 raise ValueError('Unsubmitted Test should not have a score')
@@ -104,6 +104,7 @@ def validate_data(data):
 
     if check:
         print('No ValidationError caught.')
+    return check
 
 
 if __name__ == '__main__':

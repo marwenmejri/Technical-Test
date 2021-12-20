@@ -1,0 +1,19 @@
+data : 
+ {0: ['1', 'username@mail.com', 'name_2', 'Online Test Sent', '2021/12/18 18:48:53', None], 1: ['2', 'mejri.marwen00@gmail.com', 'name_2', 'Submitted Test', '2021/12/18 18:48:53', '34/50'], 2: ['3', 'mejri.marwen00@gmail.com', 'name_1', 'Applied', None, None], 3: ['4', 'marwene.mejrii@gmail.com', 'name_3', 'Submitted Test', '2021/12/18 18:48:53', '24/50'], 4: ['5', 'username@mail.com', 'name_3', 'Interview Mail Sent', '2021/12/19 20:20:24', '34/50'], 5: ['6', 'username@mail.com', 'name_3', 'Refusal Mail Sent', '2021/12/19 20:23:46', '34/50'], 6: ['7', 'marwene.mejrii@gmail.com', 'name_1', 'Online Test Sent', '2021/12/05 14:25:41', None]}
+
+No ValidationError caught.
+validation : 
+ True
+**********
+Email about Result Test Mail : Congratulations sent to mejri.marwen00@gmail.com on 2021/12/20 16:02:12
+Email about Application Received sent to mejri.marwen00@gmail.com on 2021/12/20 16:02:13
+Email about Result Test Mail sent to marwene.mejrii@gmail.com on 2021/12/20 16:02:15
+Email about Reminder Mail sent to marwene.mejrii@gmail.com on 2021/12/20 16:02:16
+data_after_update : 
+ [['1', 'username@mail.com', 'name_2', 'Online Test Sent', '2021/12/18 18:48:53', None], ['2', 'mejri.marwen00@gmail.com', 'name_2', 'Interview Mail Sent', '2021/12/20 16:02:10', '34/50'], ['3', 'mejri.marwen00@gmail.com', 'name_1', 'Online Test Sent', '2021/12/20 16:02:12', None], ['4', 'marwene.mejrii@gmail.com', 'name_3', 'Refusal Mail Sent', '2021/12/20 16:02:13', '24/50'], ['5', 'username@mail.com', 'name_3', 'Interview Mail Sent', '2021/12/19 20:20:24', '34/50'], ['6', 'username@mail.com', 'name_3', 'Refusal Mail Sent', '2021/12/19 20:23:46', '34/50'], ['7', 'marwene.mejrii@gmail.com', 'name_1', 'Reminder Sent', '2021/12/20 16:02:15', None]]
+
+Update Respnse : 
+ {'spreadsheetId': '1tdl5JSEWel8yG6hoT8_w7Nwg2sXn3FpTEk8mNiDUS7I', 'updatedRange': 'Feuille1!A2:F8', 'updatedRows': 7, 'updatedColumns': 6, 'updatedCells': 39}
+
+No ValidationError caught.
+Email about Application Loggs sent to mejri.marwen00@gmail.com on 2021/12/20 16:02:19

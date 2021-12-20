@@ -5,7 +5,6 @@ from googleapiclient.discovery import build
 import pandas as pd
 from dotenv import load_dotenv
 
-
 load_dotenv()
 sheet_id = os.getenv('SHEET_ID')
 
@@ -36,12 +35,6 @@ def get_spreadsheet_data(sheet_id, SERVICE_ACCOUNT_FILE, range, scopes=SCOPES):
     return data, df
 
 
-aoa = [['ID', 'Email', 'Project', 'Status', 'Mail sent', 'Test Score'],
-       ['1', 'username@mail.com', 'name_1', 'Interview Mail Sent', '2021/12/18 18:48:53',
-        '34/50'],
-       ['2', 'username@mail.com', 'name_1', 'Submitted Test', '2021/12/18 18:48:53', '34/50']]
-
-
 def update_spreadsheet_data(sheet_id, data, SERVICE_ACCOUNT_FILE, range, scopes=SCOPES):
     creds = None
     creds = service_account.Credentials.from_service_account_file(
@@ -64,7 +57,12 @@ if __name__ == '__main__':
                                     range="Feuille1!A1:F8", scopes=SCOPES)
     print(data, df, sep="\n\n")
 
-    # response = update_spreadsheet_data(sheet_id=sheet_id, data=aoa,
-    #                                    SERVICE_ACCOUNT_FILE=SERVICE_ACCOUNT_FILE,
-    #                                    range="Feuille2!A4", scopes=SCOPES)
-    # print(response)
+    aoa = [['ID', 'Email', 'Project', 'Status', 'Mail sent', 'Test Score'],
+           ['1', 'username@mail.com', 'name_1', 'Interview Mail Sent', '2021/12/18 18:48:53',
+            '34/50'],
+           ['2', 'username@mail.com', 'name_1', 'Submitted Test', '2021/12/18 18:48:53', '34/50']]
+
+    response = update_spreadsheet_data(sheet_id=sheet_id, data=aoa,
+                                       SERVICE_ACCOUNT_FILE=SERVICE_ACCOUNT_FILE,
+                                       range="Feuille2!A4", scopes=SCOPES)
+    print(response)
